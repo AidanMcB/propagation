@@ -1,0 +1,41 @@
+--
+Whenever we have an event, we have event.eventPhase :
+1 = Capturing 
+2 = Target  (level of object that had the event occur)
+3 = Bubbling
+0 = None (no event currently occuring)
+
+Every element above the clicked(targeted) element is notified during the Capture phase, 
+
+    Capture Phase: Window > Document > html > body > table > tbody > tr > tbody
+
+    Target Phase: element that had the event occur 
+
+    Bubbling Phase: Every element above is again notified that this element had an event occur to it 
+
+You can listen in on the capture or bubbling phase on the parent components 
+usCapture(paramater)
+Third argument in addEventListener is a boolean 
+    True = Capture Phase 
+    False = Bubbling Phase
+
+Determines if things should happend before or after (capture or bubble phase)
+
+e.target.id VS this.id 
+
+e.target will always refer to which element is the target (clicked)(element on which the event happened)
+this refers to the element being propogated through
+
+- Stop Propagation 
+
+event.stopPropagation();
+
+In Capture Phase (True):
+Parent element or highest element is notified but then nothing else happens 
+because e.stopPropagation() stops the propagation from occuring further 
+
+In Bubbling Phase (False):
+Only the target element is notified none of the parents
+because e.stopPropogation() stops the bubbling up to the parents   
+
+

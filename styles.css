@@ -1,0 +1,24 @@
+.outer {
+    background: green;
+    color: white;
+    outline: 1px solid black;
+    margin: auto;
+    width: 50%;
+    height: 40vh;
+}
+.middle {
+    background:rgba(255, 255, 0, 0.716);
+    color: black;
+    outline: 1px solid black;
+    margin: auto;
+    width: 50%;
+    height: 30vh;
+}
+.inner{ 
+    background: white;
+    color: black;
+    outline: 1px solid black;
+    margin: auto;
+    width: 50%;
+    height: 20vh;
+}
