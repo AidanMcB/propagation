@@ -2,19 +2,25 @@ let inner = document.querySelector('#inner')
 let middle = document.querySelector('#middle')
 let outer = document.querySelector('#outer')
 
-inner.addEventListener('click', showEventPhase)
-
+inner.addEventListener('click', (e) => {
+    // e.stopPropagation();
+    console.log("Hello my baby,")
+})
 
 middle.addEventListener('click', (e) => {
-    showEventPhase(e)
     console.log("Hello my honey,")
 })
 
 outer.addEventListener('click', (e) => {
-    showEventPhase(e)
     console.log("Hello my ragtime gaaal!")
 })
 
+// let divs = [inner, middle, outer]
+
+// divs.map(div => {
+//     div.addEventListener('click', showEventPhase, true)
+//     div.addEventListener('click', showEventPhase, false)
+// })
 
 function showEventPhase(e) {
 
@@ -28,8 +34,6 @@ function showEventPhase(e) {
         phase = 'Bubbling'
     }
 
-    console.log('Box: ' + this.id + " - " + phase)
-    // if(e.target.id === this) {
-    //     console.log('Box: ' + e.target.id + " - " + phase)
-    // }
+    console.log('Div: ' + this.id + " - " + phase)
+
 }
